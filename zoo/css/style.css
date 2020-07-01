@@ -1,0 +1,302 @@
+@charset "utf-8";
+
+
+
+@import url('https://fonts.googleapis.com/css?family=Sacramento');
+
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html {
+  font-size: -moz-calc(4px + 0.45vw);
+  font-size: -webkit-calc(4px + 0.45vw);
+  font-size: calc(4px + 0.45vw);
+}
+body {
+  font-family: 'Montserrat', sans-serif;
+  color: #000;
+}
+a {
+  text-decoration: none;
+  color: #000;
+}
+*:focus {
+  outline: 0;
+}
+/* Primary Style
+--------------------------------*/
+.main {
+  max-width: 110rem;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  position: relative;  
+}
+header {
+  line-height: 12rem;
+  height: 12rem;
+}
+header img {
+ max-width:25%;
+ height:auto;
+ vertical-align: text-top;
+}
+header ul::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+header li {
+  float: left;
+  width: 12.5%;
+  text-align: center;
+  text-transform: uppercase;
+}
+header li:nth-child(4) {
+  width: 25%;
+}
+
+.text {
+  font-size: 2rem;
+  padding: 2rem 0;
+  -moz-columns: 3;
+  -webkit-columns: 3;
+  columns: 3;
+}
+.text p {
+  margin-bottom: 2rem;
+}
+@media screen and (max-width: 800px) {
+  header ul li:not(:nth-child(4)) {
+    display: none;
+  }
+  header ul li:nth-child(4) {
+    width: 100%;
+  }
+}
+
+
+
+h1,h2{
+  font-family: 'Sacramento', cursive;
+  text-align: center;
+  font-size: 50px;
+}
+
+/* Slider Style
+--------------------------------------*/
+/* slick調整 */
+.slick {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.slick-next {
+  right: 10px;
+  z-index: 99;
+}
+.slick-prev {
+  left: 10px;
+  z-index: 99;
+}
+.slick-dots > li:only-child {
+  display: none;/* スライドが１つの時はドット非表示 */
+}
+
+/* doropdown */
+.dropdwn {
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+  text-align: center;
+}
+.dropdwn__btn {
+  background: #1d7299;
+  line-height: 50px;
+  margin: 20px;
+  color: #fff;
+}
+.dropdwn__btn:hover {
+  cursor: pointer;
+}
+.dropdwnMenu {
+  display: none;
+}
+.dropdwnMenu__list {
+  line-height: 40px;
+  border: 2px solid #1d7299;
+  border-top: none;
+  background: #fff;
+  color: #000;
+  display: block;
+}
+
+.side {
+  max-width: 600px;
+  overflow: hidden;
+}
+.side .dropdwn__btn {
+  width: 260px;
+  float: left;
+}
+
+/* pageTop */
+.box01 {
+  width: 800px;
+  height: 3000px;
+  margin: 0 auto;
+  background: #ccc;
+}
+
+.pageTop {
+  display: block;
+  width: 40px;
+  height: 40px;
+  position: fixed;
+  bottom: 30px;
+  right: 20px;
+}
+
+/* fadeinout */
+.fadeImg {
+  position:relative;
+  width: 800px;
+  height: 533px;
+  margin: 0 auto;
+}
+.fadeImg img {
+  position: absolute;
+}
+.fadeImg img:not(:first-child) {
+  display: none;
+}
+.fadeImg__item:not(:first-child) {
+  display: none;
+}
+.fadeImg__item .caption {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  margin:0;
+  padding:0;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 50px;
+  z-index: 10;
+}
+
+
+
+
+
+.sec{
+    margin-bottom: 120px;
+}
+ 
+.flex{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+ 
+.col2{
+    width:40%;
+}
+ 
+.img-container{
+    overflow: hidden;
+    position: relative;
+}
+ 
+.img-container__img{
+    display: block;
+    opacity: 0;
+    position: relative;
+    transition:all .5s .3s ease; 
+    z-index: 0;
+}
+ 
+.img-container:before{
+    background: #333;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transform: translateX(-100%);
+    transition:all .8s 0s ease; 
+    width: 100%;
+    z-index: 1;     
+}
+ 
+.text-container{
+    opacity: 0;
+    padding:0 60px;
+    transition: all .8s .5s ease;
+}
+ 
+.text-container__title{
+    color: #333;
+    font-size: 60px;
+    font-weight: 700;
+}
+ 
+/*アニメーションするプロパティを設定します*/
+.img-container.active img{
+    opacity: 1;
+}
+ 
+.img-container.active:before{
+    transform: translateX(100%);        
+}
+ 
+.text-container.active{
+    opacity: 1;
+}
+
+/*button*/
+.btn-partial-line {
+  position: relative;
+  display: inline-block;
+  font-weight: bold;
+  padding: 0.25em 0.5em;
+  text-decoration: none;
+  border-bottom: solid 3px #668ad8;
+  border-left: solid 3px #668ad8;
+  color: #668ad8;
+  transition: .4s;
+}
+
+.btn-partial-line:hover {
+  padding-left: 0.7em;
+  padding-right: 0.3em;
+}
+
+
+.cont-contactBtn{
+  text-align: center;
+  height: 15vw;
+}
+
+
+
+
+
+
+footer{
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  margin-top: auto;
+}
+ul.footer-menu li {
+  display: inline;
+}

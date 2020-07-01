@@ -1,0 +1,369 @@
+@charset "utf-8";
+
+
+
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body{
+	background-color: #6a4c8e;
+	font-family: 'Creepster', cursive;
+	text-align: center;
+}
+
+svg {
+  position: fixed;
+  display: block;
+  width: 100%;
+  top: -1%;
+  z-index: -99;
+}
+
+
+header nav {
+  width: 100%;
+}
+header nav ul {
+  width: var(--main-width);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+ }
+header nav ul li {
+  width: 25%;
+}
+header nav ul li a {
+  font-size: 5vh;
+  display: block;
+  color: #fff;
+  padding: 10px 0;
+  text-align: center;
+}
+header nav ul li a:hover {
+  background:  rgba(0,0,0,0.3);
+  color:  black;
+}
+
+h1 {
+	background-image: url(../images/RainyDay.gif);
+	background-size: cover;
+	color: transparent;
+	-moz-background-clip: text;
+	-webkit-background-clip: text;
+	text-transform: uppercase;
+	font-size: 5rem;
+	line-height: 1;
+	margin: 0 auto;
+}
+.title p{
+	font-family: 'HanziPen SC',sans-serif;
+	font-size:2rem;
+	text-align:center;
+	line-height:1em;
+	font-weight:bold;
+	color: #FFF;
+	text-shadow: 
+		0 0 0.05em #F06292,
+		0 0 0.10em #F06292,
+		0 0 0.15em #F06292,
+		0 0 0.30em #F06292;
+	filter: saturate(80%);
+}
+
+
+.title {
+  width: 100%;
+  height: 5vw;
+  font-size: 3rem;
+  box-sizing: border-box; 
+  background-size: cover;
+  position: relative;
+  top: 15vw;
+}
+
+
+
+
+.flex{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+ 
+.col2{
+    width:50vw;
+}
+ 
+.img-container{
+    overflow: hidden;
+    position: relative;
+}
+ 
+.img-container__img{
+    display: block;
+    opacity: 0;
+    position: relative;
+    transition:all .5s .3s ease; 
+    z-index: 0;
+}
+ 
+.img-container:before{
+    background: #333;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transform: translateX(-100%);
+    transition:all .8s 0s ease; 
+    width: 100%;
+    z-index: 1;     
+}
+ 
+.text-container{
+    opacity: 0;
+    padding:0 60px;
+    transition: all .8s .5s ease;
+}
+ 
+.text-container__title{
+    color: #333;
+    font-size: 60px;
+    font-weight: 700;
+}
+ 
+/*アニメーションするプロパティを設定します*/
+.img-container.active img{
+    opacity: 1;
+}
+ 
+.img-container.active:before{
+    transform: translateX(100%);        
+}
+ 
+.text-container.active{
+    opacity: 1;
+}
+
+
+
+
+
+
+
+
+    @keyframes colorchange
+    {
+      0%   {font: red; color: cyan;}
+      33%  {font: green; color: magenta;}
+      66%  {font: blue; color: yellow;}
+      100% {font: red; color: cyan;}
+   }
+
+
+
+#message {
+  animation: colorchange 17s linear 1s infinite; /* animation-name followed by duration in seconds*/
+         /* you could also use milliseconds (ms) or something like 2.5s */
+  font-size: 4vw;
+  text-align: center;
+  color: inherit;
+  opacity: 75%;
+  mix-blend-mode: difference;
+  transform: rotate(-4deg);
+}
+
+
+
+
+.glitch {
+  color: white;
+  font-size: 100px;
+  position: relative;
+  width: 400px;
+  margin: 0 auto;
+}
+
+@keyframes noise-anim {
+  0% {
+    clip: rect(12px, 9999px, 2px, 0);
+  }
+  5% {
+    clip: rect(46px, 9999px, 48px, 0);
+  }
+  10% {
+    clip: rect(14px, 9999px, 87px, 0);
+  }
+  15% {
+    clip: rect(17px, 9999px, 83px, 0);
+  }
+  20% {
+    clip: rect(92px, 9999px, 51px, 0);
+  }
+  25% {
+    clip: rect(12px, 9999px, 75px, 0);
+  }
+  30% {
+    clip: rect(98px, 9999px, 72px, 0);
+  }
+  35% {
+    clip: rect(76px, 9999px, 73px, 0);
+  }
+  40% {
+    clip: rect(3px, 9999px, 46px, 0);
+  }
+  45% {
+    clip: rect(25px, 9999px, 55px, 0);
+  }
+  50% {
+    clip: rect(21px, 9999px, 73px, 0);
+  }
+  55% {
+    clip: rect(61px, 9999px, 41px, 0);
+  }
+  60% {
+    clip: rect(90px, 9999px, 68px, 0);
+  }
+  65% {
+    clip: rect(38px, 9999px, 78px, 0);
+  }
+  70% {
+    clip: rect(96px, 9999px, 53px, 0);
+  }
+  75% {
+    clip: rect(25px, 9999px, 83px, 0);
+  }
+  80% {
+    clip: rect(67px, 9999px, 97px, 0);
+  }
+  85% {
+    clip: rect(68px, 9999px, 42px, 0);
+  }
+  90% {
+    clip: rect(90px, 9999px, 64px, 0);
+  }
+  95% {
+    clip: rect(17px, 9999px, 13px, 0);
+  }
+  100% {
+    clip: rect(99px, 9999px, 13px, 0);
+  }
+}
+.glitch:after {
+  content: attr(data-text);
+  position: absolute;
+  left: 115px;
+  text-shadow: -1px 0 red;
+  top: 0;
+  color: white;
+  overflow: hidden;
+  clip: rect(0, 900px, 0, 0);
+  animation: noise-anim 2s infinite linear alternate-reverse;
+}
+
+@keyframes noise-anim-2 {
+  0% {
+    clip: rect(55px, 9999px, 28px, 0);
+  }
+  5% {
+    clip: rect(40px, 9999px, 4px, 0);
+  }
+  10% {
+    clip: rect(4px, 9999px, 91px, 0);
+  }
+  15% {
+    clip: rect(88px, 9999px, 82px, 0);
+  }
+  20% {
+    clip: rect(48px, 9999px, 69px, 0);
+  }
+  25% {
+    clip: rect(54px, 9999px, 47px, 0);
+  }
+  30% {
+    clip: rect(80px, 9999px, 64px, 0);
+  }
+  35% {
+    clip: rect(80px, 9999px, 93px, 0);
+  }
+  40% {
+    clip: rect(81px, 9999px, 32px, 0);
+  }
+  45% {
+    clip: rect(34px, 9999px, 38px, 0);
+  }
+  50% {
+    clip: rect(72px, 9999px, 34px, 0);
+  }
+  55% {
+    clip: rect(43px, 9999px, 73px, 0);
+  }
+  60% {
+    clip: rect(4px, 9999px, 6px, 0);
+  }
+  65% {
+    clip: rect(16px, 9999px, 95px, 0);
+  }
+  70% {
+    clip: rect(96px, 9999px, 50px, 0);
+  }
+  75% {
+    clip: rect(98px, 9999px, 100px, 0);
+  }
+  80% {
+    clip: rect(71px, 9999px, 43px, 0);
+  }
+  85% {
+    clip: rect(96px, 9999px, 46px, 0);
+  }
+  90% {
+    clip: rect(67px, 9999px, 99px, 0);
+  }
+  95% {
+    clip: rect(9px, 9999px, 53px, 0);
+  }
+  100% {
+    clip: rect(74px, 9999px, 43px, 0);
+  }
+}
+.glitch:before {
+  content: attr(data-text);
+  position: absolute;
+  left: 115px;
+  text-shadow: 1px 0 blue;
+  top: 0;
+  color: black;
+  overflow: hidden;
+  clip: rect(0, 900px, 0, 0);
+  animation: noise-anim-2 3s infinite linear alternate-reverse;
+}
+.stf:after {
+  left: 95px;
+  color: black;
+}
+.stf:before{
+  left: 95px;
+}
+
+
+
+.parallax-bg {
+  background-image: url('../images/movie19202.png');
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+
+
+
+
+
+
+
+
+

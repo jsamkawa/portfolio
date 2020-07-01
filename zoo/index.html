@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+	<title>zoo</title>
+	  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<div class="main">
+  <header>
+    <ul>
+      <li><a href="#">Animal</a></li>
+      <li><a href="#">Animal</a></li>
+      <li><a href="#">Animal</a></li>
+      <li><a href="#"><img src="images/logo-1.png"></a></li>
+      <li><a href="#">Animal</a></li>
+      <li><a href="#">Animal</a></li>
+      <li><a href="#">Animal</a></li>
+    </ul>
+  </header>
+
+
+<main>
+   <h1>Welcome to Saint Helena Zoo</h1>
+  
+    <ul class="fadeImg">
+    <li class="fadeImg__item">
+      <img src="images/lion.jpg" alt="" />
+      <span class="caption">BRINGING<br>WILDLIFE</span>
+    </li>
+    <li class="fadeImg__item">
+      <img src="images/fashion.png" alt="" />
+      <span class="caption">INTO<br>YOUR<br>HOMEWE’RE</span>
+    </li>
+    <li class="fadeImg__item">
+      <img src="images/giraffe-.jpg" alt="" />
+      <span class="caption">HERE<br>TOGETHER<br>STAY</span>
+    </li>
+    <li class="fadeImg__item">
+      <img src="images/girls.png" alt="" />
+      <span class="caption">CONNECTED<br>WITH</span>
+    </li>
+    <li class="fadeImg__item">
+      <img src="images/leopard-.jpg" alt="" />
+      <span class="caption">THE ANIMALS
+</span>
+    </li>
+  </ul>
+
+   <h2>Explanation</h2>
+
+
+
+
+<section class="sec">
+    <div class="flex">
+        <figure class="img-container col2">
+            <img class="img-container__img" src="images/IMG_Tiger.JPG" alt="img01">
+        </figure>
+        <div class="text-container col2">
+            <h2 class="text-container__title">animals</h2>
+            Rising up, back on the streetDid my time, took my chancesWent the distance, now I'm back on my feetJust a man and his will to surviveSo many times it happens too fastYou trade your passion for gloryDon't lose your grip on the dreams of the pastYou must fight just to keep them alive
+            </p><a href="#" class="btn-partial-line">click</a>
+        </div><!--text-container-->
+    </div><!--flex-bet-->
+</section>
+<section class="sec">
+    <div class="flex">
+        <div class="text-container col2">
+            <h2 class="text-container__title">ticket</h2>
+            <p>
+            It's the eye of the tigerIt's the thrill of the fightRising up to the challenge of our rivalAnd the last known survivorStalks his prey in the nightAnd he's watching us allWith the eye of the tiger
+            </p><a href="#" class="btn-partial-line">click</a>
+          </div>
+        <figure class="img-container col2">
+            <img class="img-container__img" src="images/ticket.JPG" alt="img01">
+        </figure>
+    </div><!--flex-bet-->
+</section>
+
+<section class="sec">
+    <div class="flex">
+        <figure class="img-container col2">
+            <img class="img-container__img" src="images/map.JPG" alt="img01">
+        </figure>
+        <div class="text-container col2">
+            <h2 class="text-container__title">area</h2>
+            <p>
+            Face to face, out in the heatHanging tough, staying hungryThey stack the odds 'til we take to the streetFor the kill with the skill to survive
+            </p><a href="#" class="btn-partial-line">click</a>
+        </div><!--text-container-->
+    </div><!--flex-bet-->
+</section>
+
+<div class="cont-contactBtn">
+                    <div class="cont-flip">
+                        <div class="front">
+                            <a href="#" class="btn btn-white flip">Send Message</a>
+                        </div>
+                        <div class="back">
+                            <a href="#" class="flip close"></a>
+                            <form class="contact-form" action="">
+                                <input type="text" placeholder="Email">
+                                <textarea name="" id="" placeholder="Leave a message"></textarea>
+                                <input type="submit" value="Send">
+                            </form>
+                        </div>
+                    </div>
+
+ </main>
+
+  <footer>
+　　<ul class="footer-menu">
+     <li>home ｜</li>
+     <li>about ｜</li>
+     <li>service ｜</li>
+     <li>Contact Us</li>
+    </ul>
+    <p>&copy; 2020 Saint Helena Zoo All Rights Reserved.</p>
+  </footer>
+
+
+</div>
+
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <script>
+    $(document).ready(function () {
+      $(".fadeImg .fadeImg__item:not(:first-child)").hide(); //:notで最初の画像以外を非表示
+      setInterval(function () {
+        $(".fadeImg .fadeImg__item:first-child").fadeOut("slow").next(".fadeImg__item").fadeIn("slow").end().appendTo(".fadeImg");
+      }, 3000);
+    });
+  </script>
+<script type="text/javascript" src="js/jquery.waypoints.min.js"></script>
+<script>
+$('.img-container').waypoint(function(direction){
+    var activePoint = $(this.element);
+    //scroll down
+    if (direction === 'down') {
+        activePoint.addClass('active');
+    }
+    else{
+        activePoint.removeClass('active');
+    }
+},{offset : '70%'});
+ 
+$('.text-container').waypoint(function(direction){
+    var activePoint = $(this.element);
+    //scroll down
+    if (direction === 'down') {
+        activePoint.addClass('active');
+    }
+    else{
+        activePoint.removeClass('active');
+    }       
+},{offset : '70%'});
+</script>
+</body>
+</html>
